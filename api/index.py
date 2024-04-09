@@ -12,4 +12,6 @@ def day():
     response = requests.get(
         f'https://www.seoulouba.co.kr/campaign/?cat=&qq=&q=&q1=&q2=&ar1=&ar2=&ch[]=&sort=popular')
 
-    return response.text
+    html_text = ''.join(response.text)
+
+    return html_text
