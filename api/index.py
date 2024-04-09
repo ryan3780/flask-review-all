@@ -6,11 +6,11 @@ import requests
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/api/day')
+def day():
 
-@app.route('/')
-def home():
-    return 'All reviews'
+    response = requests.get(
+        f'https://www.reviewplace.co.kr/pr/?&ct1=%EC%A7%80%EC%97%AD&s_sst=popu&s_sod=desc')
 
-@app.route('/about')
-def about():
-    return 'About'
+
+    return response
