@@ -12,6 +12,9 @@ def day():
     response = requests.get(
         f'https://www.seoulouba.co.kr/campaign/?cat=&qq=&q=&q1=&q2=&ar1=&ar2=&ch[]=&sort=popular')
 
-    html_text = ''.join(response.text)
+    html_text = response.text.replace('<!doctype html>', '').replace('<html>','')
 
     return html_text
+
+
+    
