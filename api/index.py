@@ -23,14 +23,9 @@ def day():
     all_href = []
     # href와 img src 가져오기
     for tum_img in tum_img_elements:
-        a_tag = tum_img.find('a')
-        img_tag = tum_img.find('img')
-        if a_tag and img_tag:
-            href = a_tag.get('href')
-            src = img_tag.get('src')
-            print('href:', href)
-            print('src:', src)
-            all_href.append(href)
+        a_tag = tum_img.find('a','tum_img')
+        href = a_tag.get('href')
+        all_href.append(href)
 
     return all_href
     
