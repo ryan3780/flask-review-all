@@ -9,7 +9,7 @@ CORS(app)
 
 @app.route('/')
 def home():
-    return 'Hello, World!'
+    return 'All reviews'
 
 @app.route('/about')
 def about():
