@@ -13,13 +13,27 @@ def day():
     response = requests.get('https://www.seoulouba.co.kr/campaign/?cat=&qq=&q=&q1=&q2=&ar1=&ar2=&ch[]=&sort=popular')
     html_text = response.text
 
-    # BeautifulSoup을 사용하여 HTML 텍스트 파싱
+   # BeautifulSoup를 사용하여 HTML 파싱
     soup = BeautifulSoup(html_text, 'html.parser')
 
-    # 텍스트 형식으로 변환
-    text_content = soup.get_text()
+    # class='tum_img'인 요소 찾기
+    tum_img_elements = soup.find_all('li','campaign_content')
 
-    return text_content
+
+    all_href = []
+    # href와 img src 가져오기
+    for tum_img in tum_img_elements:
+        a_tag = tum_img.find('a')
+        img_tag = tum_img.find('img')
+        if a_tag and img_tag:
+            href = a_tag.get('href')
+            src = img_tag.get('src')
+            print('href:', href)
+            print('src:', src)
+            all_href.append(href)
+
+    return all_href
+    
 
 
     
