@@ -50,7 +50,7 @@ def day():
 
 
 
-        all_campaigns.append(info)
+        all_campaigns.append(minus_day)
 
     
 
