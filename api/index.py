@@ -12,7 +12,6 @@ CORS(app,origins="*")
 def day():
     response = requests.get('https://www.seoulouba.co.kr/campaign/?cat=&qq=&q=&q1=&q2=&ar1=&ar2=&ch[]=&sort=popular')
    
-
     html_text = response.text
 
    # BeautifulSoup를 사용하여 HTML 파싱
@@ -21,7 +20,6 @@ def day():
     # class='campaign_content'인 요소 찾기
     campaign_contents = soup.find_all('li','campaign_content')
 
-
     all_campaigns = []
 
     for campaign in campaign_contents:
@@ -29,12 +27,15 @@ def day():
         href = a_tag.get('href')
         img = campaign.find('img')
         src = img.get('src')
+        title = campaign.find('strong', 's_campaign_title')
 
-        href_and_src = {}
-        href_and_src['href'] = href
-        href_and_src['src'] = src
+        info = {}
+        info['href'] = href
+        info['src'] = src
+        info['title'] = title
 
-        all_campaigns.append(href_and_src)
+
+        all_campaigns.append(info)
 
     
 
