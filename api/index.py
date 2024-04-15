@@ -25,9 +25,10 @@ def day():
     for tum_img in tum_img_elements:
         a_tag = tum_img.find('a','tum_img')
         href = a_tag.get('href')
-        img = tum_img.find('img').get('src')
+        img = tum_img.find('img')
+        src = img.get('src')
 
-        all_campaigns.append({href : href, thumbnail : img})
+        all_campaigns.append({href : href, thumbnail : src})
 
     
 
