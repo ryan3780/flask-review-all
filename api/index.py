@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 CORS(app,origins="*")
 
-today = datetime.today()
+
 
 @app.route('/api/seoulouba')
 def day():
@@ -22,6 +22,8 @@ def day():
 
     # class='campaign_content'인 요소 찾기
     campaign_contents = soup.find_all('li','campaign_content')
+
+    today = datetime.today()
 
     all_campaigns = []
 
