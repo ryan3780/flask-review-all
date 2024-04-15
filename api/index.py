@@ -35,7 +35,7 @@ def day():
         title = campaign.find('strong', 's_campaign_title')
         description = campaign.find('span', 'basic_blue')
         d_day = campaign.find('div', 'd_day')
-        minus_day = int(d_day.text.replace('D-',''))
+        # minus_day = int(d_day.text.replace('D-',''))
 
       
         info = {}
@@ -46,8 +46,8 @@ def day():
 
         if d_day.text == 'D-day':
             info['d_day'] = today
-        else:
-            info['d_day'] = today - timedelta(days=minus_day)
+        # else:
+            # info['d_day'] = today - timedelta(days=minus_day)
             
 
 
