@@ -54,7 +54,7 @@ def day():
 
     
 
-    return minus_day
+    return all_campaigns
     
 
 
