@@ -36,7 +36,6 @@ def day():
         description = campaign.find('span', 'basic_blue')
         d_day = campaign.find('div', 'd_day')
         minus_day = d_day.text.replace('D-','')
-        int_day = int(minus_day)
 
       
         info = {}
@@ -45,15 +44,15 @@ def day():
         info['title'] = title.text
         info['description'] = description.text
 
-        if d_day.text == 'D-day':
-            info['d_day'] = today
+        # if d_day.text == 'D-day':
+        #     info['d_day'] = today
         # else:
             # info['d_day'] = today - timedelta(days=minus_day)
             
 
 
 
-        all_campaigns.append(int_day)
+        all_campaigns.append(minus_day)
 
     
 
