@@ -32,7 +32,7 @@ def day():
         info = {}
         info['href'] = href
         info['src'] = src
-        info['title'] = title
+        info['title'] = title.text
 
 
         all_campaigns.append(info)
