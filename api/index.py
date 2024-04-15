@@ -36,6 +36,7 @@ def day():
         description = campaign.find('span', 'basic_blue')
         d_day = campaign.find('div', 'd_day')
         minus_day = d_day.text.replace('D-','')
+        int_day = int(minus_day)
 
       
         info = {}
@@ -52,7 +53,7 @@ def day():
 
 
 
-        all_campaigns.append(minus_day)
+        all_campaigns.append(int_day)
 
     
 
