@@ -6,13 +6,13 @@ from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
-CORS(app)
+CORS(app,origins="*")
 
 @app.route('/api/seoulouba')
 def day():
     response = requests.get('https://www.seoulouba.co.kr/campaign/?cat=&qq=&q=&q1=&q2=&ar1=&ar2=&ch[]=&sort=popular')
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    
+   
+
     html_text = response.text
 
    # BeautifulSoup를 사용하여 HTML 파싱
