@@ -21,7 +21,7 @@ def day():
 
 
     all_campaigns = []
-    # href와 img src 가져오기
+
     for tum_img in tum_img_elements:
         a_tag = tum_img.find('a','tum_img')
         href = a_tag.get('href')
