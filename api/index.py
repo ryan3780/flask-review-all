@@ -51,7 +51,7 @@ def day():
 
 
             apply_num = recruit.text.split('/')[0]
-            info['recruit'] = apply_num
+            info['recruit'] = apply_num.replace(' ','').replace('신청', '')
 
             if minus_day == 'day':
                 info['d_day'] = today.strftime('%Y-%m-%d')
