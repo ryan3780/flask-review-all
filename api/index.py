@@ -51,6 +51,10 @@ def day():
             info['description'] = description.text
             info['recruit'] = recruit.text
 
+
+            apply_num = recruit.text.split('/')[0]
+            info['num'] = apply_num
+
             if minus_day == 'day':
                 info['d_day'] = today.strftime('%Y-%m-%d')
             else:
