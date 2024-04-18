@@ -43,17 +43,14 @@ def day():
             description = campaign.find('span', 'basic_blue')
             recruit = campaign.find('div', 'recruit')
 
-
             info = {}
             info['href'] = href
             info['src'] = src
             info['title'] = title.text
             info['description'] = description.text
-            info['recruit'] = recruit.text
-
 
             apply_num = recruit.text.split('/')[0]
-            info['num'] = apply_num
+            info['num'] = apply_num.replace(' ','').replace('신청','')
 
             if minus_day == 'day':
                 info['d_day'] = today.strftime('%Y-%m-%d')
@@ -62,8 +59,6 @@ def day():
                 result_day = today - timedelta(days=int_minus_day)
                 info['d_day'] = result_day.strftime('%Y-%m-%d')
         
-
-
 
         all_campaigns.append(info)
 
