@@ -36,7 +36,7 @@ def day():
         description = campaign.find('span', 'basic_blue')
         d_day = campaign.find('div', 'd_day')
 
-        # minus_day = d_day.text.replace(' ', '')replace('D-','')
+        minus_day = d_day.replace("\\r", "").replace("\\n", "").replace("\\t", "").replace("D-", "")
 
       
         info = {}
@@ -44,7 +44,7 @@ def day():
         info['src'] = src
         info['title'] = title.text
         info['description'] = description.text
-        info['d_day'] = d_day.text
+        info['d_day'] = minus_day
 
         # if d_day.text == 'D-day':
         #     info['d_day'] = today
