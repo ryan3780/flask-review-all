@@ -49,6 +49,7 @@ def day():
             info['title'] = title.text
             info['description'] = description.text
 
+
             apply_num = recruit.text.split('/')[0]
             info['recruit'] = apply_num
 
