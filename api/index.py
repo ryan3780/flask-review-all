@@ -46,10 +46,11 @@ def day():
         info['description'] = description.text
 
         if minus_day == 'day':
-            info['d_day'] = today
+            info['d_day'] = today.strftime('%Y-%m-%d')
         else:
             int_minus_day = int(minus_day)
-            info['d_day'] = today - timedelta(days=int_minus_day)
+            result_day = today - timedelta(days=int_minus_day)
+            info['d_day'] = result_day.strftime('%Y-%m-%d')
             
 
 
