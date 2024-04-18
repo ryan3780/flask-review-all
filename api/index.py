@@ -44,12 +44,12 @@ def day():
         info['src'] = src
         info['title'] = title.text
         info['description'] = description.text
-        info['d_day'] = minus_day
 
-        # if d_day.text == 'D-day':
-        #     info['d_day'] = today
-        # else:
-            # info['d_day'] = today - timedelta(days=minus_day)
+        if minus_day == 'day':
+            info['d_day'] = today
+        else:
+            int_minus_day = int(minus_day)
+            info['d_day'] = today - timedelta(days=int_minus_day)
             
 
 
