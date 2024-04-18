@@ -34,7 +34,7 @@ def day():
         src = img.get('src')
         title = campaign.find('strong', 's_campaign_title')
         description = campaign.find('span', 'basic_blue')
-        d_day = campaign.find('div', 'd_day')
+        # d_day = campaign.find('div', 'd_day')
         # minus_day = d_day.text.replace(' ', '')replace('D-','')
 
       
@@ -52,7 +52,7 @@ def day():
 
 
 
-        all_campaigns.append(d_day)
+        all_campaigns.append(info)
 
     
 
