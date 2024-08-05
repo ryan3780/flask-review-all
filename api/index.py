@@ -14,8 +14,6 @@ CORS(app,origins="*")
 @app.route('/api/seoulouba')
 def day():
     response = requests.get('https://www.seoulouba.co.kr/campaign/?cat=&qq=&q=&q1=&q2=&ar1=&ar2=&ch[]=&sort=popular')
-
-    tt = response.txt
    
     html_text = response.text
 
