@@ -38,7 +38,7 @@ def day():
             a_tag = campaign.find('a','tum_img')
             href = a_tag.get('href')
             img = campaign.find('img')
-            src = img.get('src')
+            #src = img.get('src')
             title = campaign.find('strong', 's_campaign_title')
             description = campaign.find('span', 'basic_blue')
             recruit = campaign.find('div', 'recruit')
