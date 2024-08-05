@@ -14,6 +14,8 @@ CORS(app,origins="*")
 @app.route('/api/seoulouba')
 def day():
     response = requests.get('https://www.seoulouba.co.kr/campaign/?cat=&qq=&q=&q1=&q2=&ar1=&ar2=&ch[]=&sort=popular')
+
+    tt = response.txt
    
     html_text = response.text
 
@@ -38,7 +40,7 @@ def day():
             a_tag = campaign.find('a','tum_img')
             href = a_tag.get('href')
             img = campaign.find('img')
-            #src = img.get('src')
+            src = img.get('src')
             title = campaign.find('strong', 's_campaign_title')
             description = campaign.find('span', 'basic_blue')
             recruit = campaign.find('div', 'recruit')
